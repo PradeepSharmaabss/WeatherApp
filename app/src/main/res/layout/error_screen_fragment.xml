@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/background_orange"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/something_went_wrong"
+                    android:textSize="@dimen/_54sdp"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-light"
+            />
+            <Button
+                    android:id="@+id/btn_retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/retry"
+                    android:textColor="@color/white"
+                    android:background="@color/background_button"
+                    android:layout_marginTop="@dimen/_44sdp"
+            />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GoWeather</string>
+    <string name="something_went_wrong">Something went wrong at our end!</string>
+    <string name="retry">RETRY</string>
+    <string name="label_permission">Allow Permission</string>
+    <string name="msg_permision_all">We need these permission to give you better experience.</string>
+    <string name="label_turn_on">Turn On</string>
+</resources>

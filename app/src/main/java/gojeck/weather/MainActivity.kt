@@ -3,6 +3,7 @@ package gojeck.weather
 import android.Manifest.permission
 import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -16,6 +17,7 @@ import gojeck.weather.utils.Utills
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
@@ -32,7 +34,15 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        checkPermission()
+        setToolbar()
+        replaceFragment(SaloonFragment.newInstance())
+//        checkPermission()
+    }
+
+    private fun setToolbar() {
+        setSupportActionBar(toolbar)
+        toolbar.setTitle("Saloon")
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
     }
 
     public fun checkPermission() {
@@ -57,7 +67,7 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
 
     override fun onSuccus(body: ResponseModel) {
         responseModel =body
-        replaceFragment(WeatherInfoFragment.newInstance())
+        replaceFragment(SaloonFragment.newInstance())
     }
 
     fun getData():ResponseModel{
@@ -87,5 +97,8 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
                 }
         }
     }
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 }

@@ -1,8 +1,27 @@
 <resources>
-    <string name="app_name">GoWeather</string>
+    <string name="app_name">Salon</string>
     <string name="something_went_wrong">Something went wrong at our end!</string>
     <string name="retry">RETRY</string>
     <string name="label_permission">Allow Permission</string>
     <string name="msg_permision_all">We need these permission to give you better experience.</string>
     <string name="label_turn_on">Turn On</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="please_type_the_verification_code_sent_to_n_9xxxxxxx19">Please type the verification code sent to\n+9XXXXXXX19</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="show_error">SHOW ERROR</string>
+    <string name="show_success">SHOW Success</string>
+
 </resources>

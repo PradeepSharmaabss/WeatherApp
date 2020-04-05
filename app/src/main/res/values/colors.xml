@@ -10,4 +10,9 @@
     <color name="white">#ffffff</color>
     <color name="text_color_black">#2a2a2a</color>
     <color name="text_color_blue">#556699</color>
+    <color name="colorAccentlight">#8509f2</color>
+    <color name="red">#e60000</color>
+    <color name="green">#33cc33</color>
+    <color name="black">#292828</color>
+    <color name="whiteoff">#606060</color>
 </resources>

@@ -35,28 +35,44 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("ApiResponse".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ApiResponse>>(){}.getType();
+    if ("CityModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CityModel>>(){}.getType();
     }
     
-    if ("Category".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Category>>(){}.getType();
+    if ("CountryModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CountryModel>>(){}.getType();
     }
     
-    if ("Order".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Order>>(){}.getType();
+    if ("LanguageModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<LanguageModel>>(){}.getType();
     }
     
-    if ("Pet".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Pet>>(){}.getType();
+    if ("SaloonProfile".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SaloonProfile>>(){}.getType();
     }
     
-    if ("Tag".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Tag>>(){}.getType();
+    if ("SaloonRatingRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SaloonRatingRequest>>(){}.getType();
     }
     
-    if ("User".equalsIgnoreCase(className)) {
-      return new TypeToken<List<User>>(){}.getType();
+    if ("SaloonSearchRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SaloonSearchRequest>>(){}.getType();
+    }
+    
+    if ("SaloonServicesModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SaloonServicesModel>>(){}.getType();
+    }
+    
+    if ("ServicesModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ServicesModel>>(){}.getType();
+    }
+    
+    if ("StateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<StateModel>>(){}.getType();
+    }
+    
+    if ("UserModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<UserModel>>(){}.getType();
     }
     
     return new TypeToken<List<Object>>(){}.getType();
@@ -65,28 +81,44 @@ public class JsonUtil {
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("ApiResponse".equalsIgnoreCase(className)) {
-      return new TypeToken<ApiResponse>(){}.getType();
+    if ("CityModel".equalsIgnoreCase(className)) {
+      return new TypeToken<CityModel>(){}.getType();
     }
     
-    if ("Category".equalsIgnoreCase(className)) {
-      return new TypeToken<Category>(){}.getType();
+    if ("CountryModel".equalsIgnoreCase(className)) {
+      return new TypeToken<CountryModel>(){}.getType();
     }
     
-    if ("Order".equalsIgnoreCase(className)) {
-      return new TypeToken<Order>(){}.getType();
+    if ("LanguageModel".equalsIgnoreCase(className)) {
+      return new TypeToken<LanguageModel>(){}.getType();
     }
     
-    if ("Pet".equalsIgnoreCase(className)) {
-      return new TypeToken<Pet>(){}.getType();
+    if ("SaloonProfile".equalsIgnoreCase(className)) {
+      return new TypeToken<SaloonProfile>(){}.getType();
     }
     
-    if ("Tag".equalsIgnoreCase(className)) {
-      return new TypeToken<Tag>(){}.getType();
+    if ("SaloonRatingRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<SaloonRatingRequest>(){}.getType();
     }
     
-    if ("User".equalsIgnoreCase(className)) {
-      return new TypeToken<User>(){}.getType();
+    if ("SaloonSearchRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<SaloonSearchRequest>(){}.getType();
+    }
+    
+    if ("SaloonServicesModel".equalsIgnoreCase(className)) {
+      return new TypeToken<SaloonServicesModel>(){}.getType();
+    }
+    
+    if ("ServicesModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ServicesModel>(){}.getType();
+    }
+    
+    if ("StateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<StateModel>(){}.getType();
+    }
+    
+    if ("UserModel".equalsIgnoreCase(className)) {
+      return new TypeToken<UserModel>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

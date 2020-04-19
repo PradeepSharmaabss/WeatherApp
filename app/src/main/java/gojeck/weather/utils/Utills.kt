@@ -27,14 +27,9 @@ object Utills {
         val window: Window = dialog!!.window
         val wlp: LayoutParams = window.attributes
         wlp.gravity = Gravity.CENTER
-        wlp.flags = LayoutParams.FLAG_BLUR_BEHIND
         window.attributes = wlp
         dialog!!.window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         dialog!!.setCancelable(false)
-        val rotate = RotateAnimation(0F, 360F, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
-        rotate.duration = 900
-        rotate.repeatCount = Animation.INFINITE
-        dialog!!.findViewById<View>(R.id.loader_image).startAnimation(rotate)
         dialog!!.show()
     }
 

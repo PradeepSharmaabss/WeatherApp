@@ -3,8 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-      >
+        android:layout_height="match_parent">
 
     <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -17,8 +16,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                 />
+                android:layout_centerVertical="true" />
 
     </RelativeLayout>
 
@@ -27,8 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_below="@id/relativeLayout"
-            android:layout_marginTop="-50dp"
-             />
+            android:layout_marginTop="-50dp" />
 
     <RelativeLayout
             android:id="@+id/container"
@@ -50,22 +47,25 @@
 
         <ProgressBar
                 android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/textView"
                 android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:visibility="gone"/>
 
         <EditText
                 android:id="@+id/editTextCode"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/progressbar"
+                android:padding="@dimen/_10sdp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:digits="0123456789"
                 android:drawablePadding="10dp"
-                android:hint="enter verification code"
-                android:inputType="phone"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:hint="Pin code"
+                android:inputType="number"
                 android:maxLength="10" />
 
         <Button

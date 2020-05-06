@@ -89,8 +89,9 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
                             it?.run {
                                 CurrentLocationListener.getInstance(this@MainActivity)
                                     .removeObservers(this@MainActivity)
-                                getResponse(this.latitude, this.longitude, "")
-                                Log.e("lat, long", "" + this.latitude + this.longitude)
+//                                getResponse(this.latitude, this.longitude, "")
+                                lat = this.latitude
+                                long = this.longitude
                             }
                         })
                 }
@@ -99,5 +100,10 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
 
     override fun onBackPressed() {
         finish()
+    }
+
+    companion object {
+        var lat: Double? = null
+        var long: Double? = null
     }
 }

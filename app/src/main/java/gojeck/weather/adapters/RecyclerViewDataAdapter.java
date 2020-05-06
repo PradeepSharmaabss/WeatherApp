@@ -1,7 +1,6 @@
 package gojeck.weather.adapters;
 
 /**
- * Created by pratap.kesaboyina on 24-12-2014.
  */
 
 import android.content.Context;
@@ -51,49 +50,13 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
         itemRowHolder.recycler_view_list.setHasFixedSize(true);
         itemRowHolder.recycler_view_list.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         itemRowHolder.recycler_view_list.setAdapter(itemListDataAdapter);
-
-
-         itemRowHolder.recycler_view_list.setNestedScrollingEnabled(false);
-
-
-       /*  itemRowHolder.recycler_view_list.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        // Disallow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        //Allow ScrollView to intercept touch events once again.
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
-                // Handle RecyclerView touch events.
-                v.onTouchEvent(event);
-                return true;
-            }
-        });*/
-
+        itemRowHolder.recycler_view_list.setNestedScrollingEnabled(false);
         itemRowHolder.btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                Toast.makeText(v.getContext(), "click event on more, "+sectionName , Toast.LENGTH_SHORT).show();
-
-
-
+                Toast.makeText(v.getContext(), "click event on more, " + sectionName, Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
-
-
-
        /* Glide.with(mContext)
                 .load(feedItem.getImageURL())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -108,25 +71,14 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
     }
 
     public class ItemRowHolder extends RecyclerView.ViewHolder {
-
         protected TextView itemTitle;
-
         protected RecyclerView recycler_view_list;
-
         protected Button btnMore;
-
-
-
         public ItemRowHolder(View view) {
             super(view);
-
             this.itemTitle = (TextView) view.findViewById(R.id.itemTitle);
             this.recycler_view_list = (RecyclerView) view.findViewById(R.id.recycler_view_list);
-            this.btnMore= (Button) view.findViewById(R.id.btnMore);
-
-
+            this.btnMore = (Button) view.findViewById(R.id.btnMore);
         }
-
     }
-
 }

@@ -21,16 +21,20 @@ import kotlinx.android.synthetic.main.saloon_fragment.*
 
 class SaloonFragment : Fragment() {
     internal var rootView: View? = null
-    var allSampleData= ArrayList<SectionDataModel>()
+    var allSampleData = ArrayList<SectionDataModel>()
     var saloonData = SaloonListing()
+    lateinit var adapter: RecyclerViewDataAdapter
+
     companion object {
         fun newInstance() =
             SaloonFragment().apply {
                 arguments = Bundle().apply {}
             }
     }
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         rootView = inflater.inflate(R.layout.saloon_fragment, container, false)
         return rootView
     }
@@ -41,10 +45,15 @@ class SaloonFragment : Fragment() {
     }
 
     private fun initView() {
-        createDummyData()
         recycler_view.setHasFixedSize(true)
-        val adapter = RecyclerViewDataAdapter(activity, allSampleData)
-        recycler_view.setLayoutManager(LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false))
+        adapter = RecyclerViewDataAdapter(activity, allSampleData)
+        recycler_view.setLayoutManager(
+            LinearLayoutManager(
+                activity,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+        )
         recycler_view.setAdapter(adapter)
         MyTask().execute()
     }
@@ -64,7 +73,10 @@ class SaloonFragment : Fragment() {
             saloonSearchRequest.numberOfRows = 20
             saloonSearchRequest.terms = ""
             var data = SaloonDataApi()
-            data.addHeader("Authorization", loginData.data.tokenType + " " + loginData.data.accessToken)
+            data.addHeader(
+                "Authorization",
+                loginData.data.tokenType + " " + loginData.data.accessToken
+            )
             var response = data.saloonDataGetSaloon(saloonSearchRequest)
             saloonData = Gson().fromJson(Gson().toJson(response), SaloonListing::class.java)
             return ""
@@ -73,6 +85,7 @@ class SaloonFragment : Fragment() {
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
             progressbar.visibility = View.GONE
+            createSaloon()
         }
 
         override fun onPreExecute() {
@@ -80,16 +93,17 @@ class SaloonFragment : Fragment() {
         }
     }
 
-    fun createDummyData() {
-        for (i in 1..5) {
+    fun createSaloon() {
+        saloonData.data.forEachIndexed{index,model->
             val dm = SectionDataModel()
-            dm.headerTitle = "Category $i"
-            val singleItem: ArrayList<SingleItemModel> = ArrayList<SingleItemModel>()
-            for (j in 0..5) {
-                singleItem.add(SingleItemModel("Saloon $j", "URL $j"))
+            dm.headerTitle =model.saloonType
+            val singleItem= ArrayList<SingleItemModel>()
+            saloonData.data[index].list.forEachIndexed{i,list->
+                singleItem.add(SingleItemModel(list.saloonName, list.id))
             }
             dm.allItemsInSection = singleItem
             allSampleData.add(dm)
         }
+        adapter.notifyDataSetChanged()
     }
 }

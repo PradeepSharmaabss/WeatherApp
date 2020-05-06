@@ -3,7 +3,6 @@ package gojeck.weather.models;
 import java.util.ArrayList;
 
 /**
- * Created by pratap.kesaboyina on 30-11-2015.
  */
 public class SectionDataModel {
 

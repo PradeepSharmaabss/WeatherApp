@@ -54,9 +54,6 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
             }).check()
     }
 
-    private fun getResponse(param: Any?, longitude: Double, query: String) {
-    }
-
     override fun onFailed() {
         replaceFragment(ErrorScreenFragment.newInstance())
     }
@@ -74,7 +71,6 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
     }
 
-    @SuppressLint("MissingPermission")
     private fun initLocationSettingObserver() {
         if (mLocationSettingDisposable != null && !mLocationSettingDisposable!!.isDisposed) {
             mLocationSetting!!.getLocationOnObserver()
@@ -89,7 +85,6 @@ class MainActivity : AppCompatActivity(), RequestCall.ClientResponse {
                             it?.run {
                                 CurrentLocationListener.getInstance(this@MainActivity)
                                     .removeObservers(this@MainActivity)
-//                                getResponse(this.latitude, this.longitude, "")
                                 lat = this.latitude
                                 long = this.longitude
                             }

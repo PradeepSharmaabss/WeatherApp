@@ -2,6 +2,7 @@ package gojeck.weather.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import gojeck.weather.R;
+import gojeck.weather.SaloonDetailPage;
 import gojeck.weather.models.SingleItemModel;
 
 public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListDataAdapter.SingleItemRowHolder> {
@@ -35,12 +37,9 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
 
     @Override
     public void onBindViewHolder(SingleItemRowHolder holder, int i) {
-
         SingleItemModel singleItem = itemsList.get(i);
-
         holder.tvTitle.setText(singleItem.getName());
-
-
+        holder.tvTitle.setId(i);
        /* Glide.with(mContext)
                 .load(feedItem.getImageURL())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -53,17 +52,11 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
     public int getItemCount() {
         return (null != itemsList ? itemsList.size() : 0);
     }
-
     public class SingleItemRowHolder extends RecyclerView.ViewHolder {
-
         protected TextView tvTitle;
-
         protected ImageView itemImage;
-
-
         public SingleItemRowHolder(View view) {
             super(view);
-
             this.tvTitle = (TextView) view.findViewById(R.id.tvTitle);
             this.itemImage = (ImageView) view.findViewById(R.id.itemImage);
 
@@ -71,9 +64,9 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
-                    Toast.makeText(v.getContext(), tvTitle.getText(), Toast.LENGTH_SHORT).show();
+                    Intent i  = new Intent(mContext, SaloonDetailPage.class);
+//                    mContext.startActivity(i);
+                    Toast.makeText(v.getContext(), ""+tvTitle.getId(), Toast.LENGTH_SHORT).show();
 
                 }
             });

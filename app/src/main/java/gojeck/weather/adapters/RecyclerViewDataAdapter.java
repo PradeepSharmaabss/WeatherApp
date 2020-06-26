@@ -40,11 +40,8 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
     public void onBindViewHolder(ItemRowHolder itemRowHolder, int i) {
 
         final String sectionName = dataList.get(i).getHeaderTitle();
-
         ArrayList singleSectionItems = dataList.get(i).getAllItemsInSection();
-
         itemRowHolder.itemTitle.setText(sectionName);
-
         SectionListDataAdapter itemListDataAdapter = new SectionListDataAdapter(mContext, singleSectionItems);
 
         itemRowHolder.recycler_view_list.setHasFixedSize(true);

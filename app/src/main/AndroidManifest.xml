@@ -22,6 +22,9 @@
                 android:noHistory="true"
                 android:screenOrientation="portrait" />
         <activity
+                android:name=".SaloonDetailPage"
+                android:screenOrientation="portrait" />
+        <activity
                 android:name=".OtpActivity"
                 android:noHistory="true"
                 android:screenOrientation="portrait">
